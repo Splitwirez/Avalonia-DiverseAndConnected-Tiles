@@ -1,0 +1,120 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AvaloniaDiverseAndConnectedTiles;assembly=AvaloniaDiverseAndConnectedTiles"
+             x:Class="AvaloniaDiverseAndConnectedTiles.App">
+    <Application.Styles>
+        <FluentTheme Mode="Light"/>
+        
+        <Style Selector="Window">
+            <Setter Property="Background">
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                    <GradientStop Offset="0" Color="#FFC6C7CA"/>
+                    <GradientStop Offset="1" Color="#FFB2B3B9"/>
+                </LinearGradientBrush>
+            </Setter>
+        </Style>
+
+        <Style Selector="WrapPanel.tiles Button">
+            <Setter Property="Margin" Value="-8"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border x:Name="Root" BorderBrush="#7FFFFFFF" BorderThickness="1" CornerRadius="2" Margin="8,8,12,12"
+                    BoxShadow="-3 6 6 2 #40000000, inset 2 -5 8 0 #20FFFFFF, inset -2 5 8 0 #40000000">
+                        <Panel>
+                            <Border x:Name="HoverBorder" CornerRadius="1" Background="#20FFFFFF" IsVisible="{TemplateBinding IsPointerOver}"/>
+                            <local:Reveal RevealStrokeThickness="2" RadiusX="2" RadiusY="2" RevealStops="{Binding (local:Reveal.RevealStops), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                            <ContentPresenter x:Name="PART_ContentPresenter"
+                                            Background="Transparent"
+                                            BorderBrush="Transparent"
+                                            BorderThickness="0"
+                                            Content="{TemplateBinding Content}"
+                                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                                            Padding="{TemplateBinding Padding}"
+                                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Panel>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="WrapPanel.tiles Button:pressed">
+            <Setter Property="RenderTransform" Value="{x:Null}"/>
+        </Style>
+
+        <Style Selector="WrapPanel.tiles Button">
+            <Setter Property="Width" Value="148"/>
+            <Setter Property="Height" Value="148"/>
+        </Style>
+        <Style Selector="WrapPanel.tiles Button.wide">
+            <Setter Property="Width" Value="280"/>
+            <Setter Property="Height" Value="148"/>
+        </Style>
+        <Style Selector="WrapPanel.tiles Button.small">
+            <Setter Property="Width" Value="82"/>
+            <Setter Property="Height" Value="82"/>
+        </Style>
+        <Style Selector="WrapPanel.tiles Button.large">
+            <Setter Property="Width" Value="280"/>
+            <Setter Property="Height" Value="280"/>
+        </Style>
+
+        
+        <Style Selector="WrapPanel.tiles Button /template/ Border#Root">
+            <Setter Property="Background" Value="#20FFFFFF"/>
+        </Style>
+
+        <Style Selector="WrapPanel.tiles Button.cold">
+            <Setter Property="local:Reveal.RevealStops">
+                <GradientStops>
+                    <GradientStop Offset="0" Color="#FF11C3D1"/>
+                    <GradientStop Offset="0.5" Color="#FF4E50C2"/>
+                    <GradientStop Offset="1" Color="#FF11C3D1"/>
+                </GradientStops>
+            </Setter>
+        </Style>
+        <Style Selector="WrapPanel.tiles Button.warm">
+            <Setter Property="local:Reveal.RevealStops">
+                <GradientStops>
+                    <GradientStop Offset="0" Color="#FF866EC4"/>
+                    <GradientStop Offset="0.5" Color="#FFDF3B3E"/>
+                    <GradientStop Offset="1" Color="#FFF3423E"/>
+                </GradientStops>
+            </Setter>
+        </Style>
+        <Style Selector="WrapPanel.tiles Button.rainbow">
+            <Setter Property="local:Reveal.RevealStops">
+                <GradientStops>
+                    <GradientStop Offset="0" Color="#FF104698"/>
+                    <GradientStop Offset="0.2" Color="#FFE27D14"/>
+                    <GradientStop Offset="0.4" Color="#FFDACE73"/>
+                    <GradientStop Offset="0.6" Color="#FFA8C7A4"/>
+                    <GradientStop Offset="0.8" Color="#FF06D3D6"/>
+                    <GradientStop Offset="1" Color="#FF0D5FB6"/>
+                </GradientStops>
+            </Setter>
+        </Style>
+
+
+        <Style Selector="WrapPanel.tiles Button > Panel > TextBlock">
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+        </Style>
+
+        <Style Selector="WrapPanel.tiles Button > Panel > :is(Control):not(:is(Panel)):not(:is(TextBlock))">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="WrapPanel.tiles Button:not(Button.small) > Panel > :is(Control):not(:is(Panel)):not(:is(TextBlock))">
+            <Setter Property="Width" Value="48"/>
+            <Setter Property="Height" Value="48"/>
+        </Style>
+        <Style Selector="WrapPanel.tiles Button.small > Panel > :is(Control):not(:is(Panel)):not(:is(TextBlock))">
+            <Setter Property="Width" Value="32"/>
+            <Setter Property="Height" Value="32"/>
+        </Style>
+    </Application.Styles>
+</Application>

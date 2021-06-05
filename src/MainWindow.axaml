@@ -1,0 +1,74 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaDiverseAndConnectedTiles.MainWindow"
+        Title="AvaloniaDiverseAndConnectedTiles" Width="660" Height="355" CanResize="False">
+    <DockPanel>
+        <Rectangle Fill="#FFEC9BAF" Width="20" DockPanel.Dock="Right"/>
+        <WrapPanel Classes="tiles" Margin="50">
+            <Button Classes="cold">
+                <Panel>
+                    <TextBlock Text="Microsoft Teams"/>
+                    <Rectangle Fill="Red"/>
+                </Panel>
+            </Button>
+            <Button Classes="rainbow">
+                <Panel>
+                    <TextBlock Text="Microsoft Edge"/>
+                    <Rectangle Fill="Red"/>
+                </Panel>
+            </Button>
+            <Button Classes="wide rainbow">
+                <Panel>
+                    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                        <TextBlock Text="Celeste Burton" FontSize="14"/>
+                        <TextBlock Text="Let's figure out how to celebrate the cross-company icon effort." TextWrapping="Wrap" Opacity="0.5"/>
+                    </StackPanel>
+                    <TextBlock Text="Mail"/>
+                    <TextBlock Text="10:38 AM" TextAlignment="Right"/>
+                </Panel>
+            </Button>
+            <Button Classes="wide cold">
+                <Panel>
+                    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                        <TextBlock Text="Mona Kane" FontSize="14"/>
+                        <TextBlock Text="Here's the latest! What do you think?" TextWrapping="Wrap" Opacity="0.5"/>
+                        <TextBlock Text="10:56 AM"/>
+                    </StackPanel>
+                    <TextBlock Text="Microsoft Outlook"/>
+                    <Rectangle Fill="Red" Width="24" Height="24" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                </Panel>
+            </Button>
+            <Button Classes="warm">
+                <Panel>
+                    <TextBlock Text="Microsoft Office"/>
+                    <Rectangle Fill="Red"/>
+                </Panel>
+            </Button>
+            <UniformGrid Columns="2">
+                <Button Classes="small cold">
+                    <Panel>
+                        <Rectangle Fill="Red"/>
+                    </Panel>
+                </Button>
+                <Button Classes="small warm">
+                    <Panel>
+                        <Rectangle Fill="Red"/>
+                    </Panel>
+                </Button>
+                <Button Classes="small rainbow">
+                    <Panel>
+                        <Rectangle Fill="Red"/>
+                    </Panel>
+                </Button>
+                <Button Classes="small cold">
+                    <Panel>
+                        <Rectangle Fill="Red"/>
+                    </Panel>
+                </Button>
+            </UniformGrid>
+        </WrapPanel>
+    </DockPanel>
+</Window>
